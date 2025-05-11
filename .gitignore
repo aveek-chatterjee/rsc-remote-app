@@ -3,3 +3,4 @@ package-lock.json
 next-env.d.ts
 .next/
 .DS_Store
+dist/

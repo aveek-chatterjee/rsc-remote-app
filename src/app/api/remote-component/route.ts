@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { JSX } from "react";
 import ServerComponent from "@/components/server/ServerComponent";
 import { elementToString } from "@/app/element-to-string";
+import { JSX } from "react";
 
 const serverComponentToString = async (
   props: (props: any) => Promise<JSX.Element>
@@ -20,14 +20,8 @@ export async function POST(request: NextRequest) {
     const serverCompInstance = await serverComponentToString(ServerComponent);
     const htmlString = serverCompInstance;
     // Create the component HTML directly without using renderToString
-    const html = `${htmlString}`;
-    // Return the HTML with appropriate headers
-    return new NextResponse(html, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "text/html",
-      },
-    });
+    const serverHTML = `${htmlString}`;
+    return new NextResponse(`${serverHTML}`);
   } catch (error) {
     console.error("Error rendering component:", error);
     return NextResponse.json(
