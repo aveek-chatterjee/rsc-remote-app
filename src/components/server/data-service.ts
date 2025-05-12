@@ -4,7 +4,7 @@ export async function getServerData() {
   
   return {
     message: "This data was fetched on the server",
-    timestamp: new Date().toDateString(),
+    timestamp: new Date().toLocaleString(),
     items: [
       { id: 1, name: "Server Item 1" },
       { id: 2, name: "Server Item 2" },

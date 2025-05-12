@@ -6,7 +6,10 @@ async function ServerComponent(props: any) {
   const data = await getServerData();
 
   return (
-    <div className="bg-blue-50 p-4 rounded" style={{ backgroundColor: "#f0f4ff" }}>
+    <div
+      className="bg-blue-50 p-4 rounded"
+      style={{ backgroundColor: "#f0f4ff" }}
+    >
       <h3 className="font-medium mb-2">Server-rendered data:</h3>
       <pre className="bg-blue-100 p-2 rounded text-sm overflow-x-auto">
         {JSON.stringify(data, null, 2)}
